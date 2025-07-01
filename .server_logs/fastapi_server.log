@@ -591,3 +591,78 @@ INFO:     100.64.4.167:40748 - "GET /strategies HTTP/1.1" 200 OK
 INFO:     100.64.4.167:40780 - "GET /trades HTTP/1.1" 200 OK
 INFO:     100.64.4.167:40782 - "GET /strategies HTTP/1.1" 200 OK
 INFO:     100.64.4.167:40786 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60466 - "OPTIONS /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60470 - "OPTIONS /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60472 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:60468 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60478 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60486 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60498 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60510 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60526 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60542 - "OPTIONS /backtest/results HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60530 - "OPTIONS /backtest/results HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60554 - "GET /backtest/results HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:60568 - "GET /backtest/results HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:59004 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:59012 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:59028 - "GET /papertrading/positions HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:59032 - "GET /papertrading/positions HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:60144 - "POST /auth/token HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60146 - "GET /user/me HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60184 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:60170 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60152 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60154 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60196 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:60226 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60210 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60200 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60234 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60248 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60252 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60262 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60278 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60288 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60304 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60302 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60328 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60322 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:47746 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:47738 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:45902 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:45892 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:55042 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:55048 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:55060 - "POST /trades HTTP/1.1" 422 Unprocessable Entity
+INFO:     100.64.4.167:46586 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:46566 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46578 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46560 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46600 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:46616 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46614 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46622 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46630 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46646 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46654 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46658 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46660 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:46676 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:54174 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:54178 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:54194 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:54210 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:54226 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:54242 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:54258 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40886 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40912 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40884 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40914 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:40930 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40938 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40948 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33692 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33676 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33694 - "GET /strategies HTTP/1.1" 200 OK
