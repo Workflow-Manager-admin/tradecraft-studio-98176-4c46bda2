@@ -1,0 +1,4 @@
+{
+    "command": "source venv/bin/activate && uvicorn src.api.main:app --host <host> --port <port>",
+    "working_directory": "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend"
+}
