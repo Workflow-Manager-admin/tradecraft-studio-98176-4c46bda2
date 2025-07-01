@@ -1009,3 +1009,123 @@ INFO:     100.64.4.167:40886 - "GET /portfolio HTTP/1.1" 200 OK
 INFO:     100.64.4.167:40892 - "GET /strategies HTTP/1.1" 200 OK
 INFO:     100.64.4.167:40894 - "GET /strategies HTTP/1.1" 200 OK
 INFO:     100.64.4.167:40898 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49598 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49586 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49604 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49606 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48070 - "OPTIONS /event/history HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48080 - "OPTIONS /event/history HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48086 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48102 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48116 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48118 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:48126 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48152 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48142 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48162 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:48166 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48170 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48172 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48176 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48192 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48198 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48214 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48228 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:58076 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:58080 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:58084 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:58096 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:58124 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:58110 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38920 - "OPTIONS /health HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38922 - "OPTIONS /health HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38940 - "GET /health HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:38952 - "GET /health HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:43272 - "OPTIONS /ai/ask HTTP/1.1" 200 OK
+INFO:     100.64.4.167:43274 - "POST /ai/ask HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:43284 - "OPTIONS /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:43286 - "OPTIONS /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:43312 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:43326 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:43324 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:43352 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52602 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52604 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:55006 - "OPTIONS /backtest/process?strategy_id=1&asset=AAPL&start_date=2025-04-01&end_date=2025-07-01 HTTP/1.1" 200 OK
+INFO:     100.64.4.167:55014 - "POST /backtest/process?strategy_id=1&asset=AAPL&start_date=2025-04-01&end_date=2025-07-01 HTTP/1.1" 200 OK
+INFO:     100.64.4.167:55026 - "OPTIONS /integration/chart?asset=AAPL&start_date=2025-04-01&end_date=2025-07-01&resolution=1d HTTP/1.1" 200 OK
+INFO:     100.64.4.167:55032 - "GET /integration/chart?asset=AAPL&start_date=2025-04-01&end_date=2025-07-01&resolution=1d HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/src/api/main.py", line 833, in chart_data
+    )
+ModuleNotFoundError: No module named 'pandas'
+INFO:     100.64.4.167:40126 - "OPTIONS /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40140 - "OPTIONS /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40150 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40166 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40178 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40192 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40210 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40208 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49052 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49054 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:34042 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:34050 - "GET /trades HTTP/1.1" 200 OK
