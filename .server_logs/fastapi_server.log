@@ -666,3 +666,32 @@ INFO:     100.64.4.167:40948 - "GET /portfolio HTTP/1.1" 200 OK
 INFO:     100.64.4.167:33692 - "GET /trades HTTP/1.1" 200 OK
 INFO:     100.64.4.167:33676 - "GET /portfolio HTTP/1.1" 200 OK
 INFO:     100.64.4.167:33694 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33710 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:33722 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33738 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33754 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33780 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33774 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33770 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33782 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33786 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:33784 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33798 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33808 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33814 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33828 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33844 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33846 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33862 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33850 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:57320 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:57334 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:43862 - "POST /trades HTTP/1.1" 422 Unprocessable Entity
+INFO:     100.64.4.167:43876 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:43878 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:43804 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:43806 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35254 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35268 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35282 - "GET /backtest/results HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:35290 - "GET /backtest/results HTTP/1.1" 404 Not Found
