@@ -111,3 +111,21 @@ INFO:     100.64.4.167:52850 - "POST /auth/login HTTP/1.1" 404 Not Found
 INFO:     100.64.4.167:58456 - "POST /auth/login HTTP/1.1" 404 Not Found
 INFO:     100.64.4.167:56584 - "HEAD /openapi.json HTTP/1.1" 200 OK
 INFO:     100.64.4.167:56588 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:42588 - "POST /auth/register HTTP/1.1" 400 Bad Request
+INFO:     100.64.4.167:39994 - "POST /auth/token HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40000 - "OPTIONS /user/me HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40016 - "GET /user/me HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40024 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40032 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     100.64.4.167:40044 - "GET /dashboard HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:40050 - "GET /dashboard HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:38450 - "OPTIONS /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38466 - "OPTIONS /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38472 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38480 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38494 - "OPTIONS /backtest/results HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38500 - "OPTIONS /backtest/results HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38510 - "GET /backtest/results HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:38520 - "GET /backtest/results HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:38522 - "GET /dashboard HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:38536 - "GET /dashboard HTTP/1.1" 404 Not Found
