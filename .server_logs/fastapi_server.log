@@ -1539,3 +1539,47 @@ INFO:     100.64.4.167:40078 - "GET /strategies HTTP/1.1" 200 OK
 INFO:     100.64.4.167:40084 - "GET /trades HTTP/1.1" 200 OK
 INFO:     100.64.4.167:40090 - "GET /strategies HTTP/1.1" 200 OK
 INFO:     100.64.4.167:40092 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:45070 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:45068 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:45100 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:45098 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:45116 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:45118 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49310 - "GET /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49316 - "GET /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49326 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49342 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49354 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:49346 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49350 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49352 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49362 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49366 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49374 - "GET /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49388 - "GET /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49390 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:49402 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33158 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33170 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33180 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33184 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33194 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33198 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33202 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33200 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33212 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:33224 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60070 - "POST /ai/assist HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60084 - "POST /ai/assist HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60090 - "GET /health HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:60094 - "GET /health HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:60100 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60112 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60118 - "OPTIONS /strategies/1 HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60120 - "OPTIONS /strategies/1 HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60124 - "GET /strategies/1 HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60136 - "GET /strategies/1 HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60110 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60114 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:37182 - "HEAD /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:37192 - "GET /openapi.json HTTP/1.1" 200 OK
