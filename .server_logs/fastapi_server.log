@@ -170,3 +170,187 @@ INFO:     100.64.4.167:44716 - "GET /docs HTTP/1.1" 200 OK
 INFO:     100.64.4.167:44720 - "GET /docs HTTP/1.1" 200 OK
 INFO:     100.64.4.167:44732 - "GET /openapi.json HTTP/1.1" 200 OK
 INFO:     100.64.4.167:44740 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44758 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44772 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44794 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44786 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44790 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44804 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44814 - "GET /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44830 - "GET /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44842 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44850 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:36782 - "OPTIONS /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:36784 - "OPTIONS /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:36792 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:36766 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:36798 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:36800 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:36830 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:36838 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38762 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:38770 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:57086 - "OPTIONS /integration/chart?asset=AAPL&start_date=2024-01-01&end_date=2024-05-20&resolution=1d HTTP/1.1" 200 OK
+INFO:     100.64.4.167:57100 - "GET /integration/chart?asset=AAPL&start_date=2024-01-01&end_date=2024-05-20&resolution=1d HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/src/api/main.py", line 833, in chart_data
+    )
+ModuleNotFoundError: No module named 'pandas'
+INFO:     100.64.4.167:39932 - "GET /integration/chart?asset=AAPL&start_date=2024-01-01&end_date=2024-05-20&resolution=1d HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/src/api/main.py", line 833, in chart_data
+    )
+ModuleNotFoundError: No module named 'pandas'
+INFO:     100.64.4.167:42586 - "POST /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:42594 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:42600 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:42598 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:42614 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:42616 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:42636 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:39084 - "OPTIONS /backtest/results HTTP/1.1" 200 OK
+INFO:     100.64.4.167:39086 - "OPTIONS /backtest/results HTTP/1.1" 200 OK
+INFO:     100.64.4.167:39092 - "GET /backtest/results HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:39108 - "GET /backtest/results HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:39600 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:39608 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:39614 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:39630 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:39638 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:39642 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:47984 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:47962 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:47960 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:47798 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:47780 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:47784 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:42408 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:42392 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:42410 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:59080 - "OPTIONS /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:59064 - "OPTIONS /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:59096 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:59104 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:59106 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52572 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52556 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52570 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:50358 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:50360 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:50362 - "GET /strategies HTTP/1.1" 200 OK
