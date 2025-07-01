@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Depends, Request
+from fastapi import FastAPI, HTTPException, Depends, Request, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi.responses import JSONResponse
@@ -228,7 +228,11 @@ def create_access_token(user_id: int, expires_minutes=120) -> str:
     conn = get_db()
     conn.execute(
         "INSERT INTO auth_tokens (user_id, token, expires_at) VALUES (?,?,?)",
-        (user_id, token, expires_at)
+        (
+            user_id,
+            token,
+            expires_at,
+        ),
     )
     conn.commit()
     conn.close()
@@ -323,10 +327,20 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
 
 # PUBLIC_INTERFACE
 @app.post("/auth/google", tags=["auth"], summary="Login with Google OAuth", response_model=Token)
-def google_login(token: str = Field(..., description="Google OAuth token"), request: Request = None):
+def google_login(
+    authorization: str = Header(..., description="Google OAuth token in Authorization header (Bearer <token>)"),
+    request: Request = None
+):
     """
     Authenticate via Google OAuth token (mock/demo; in production validate token with Google).
+
+    Expects the Google OAuth token in the Authorization header as 'Bearer <token>'.
     """
+    # Extract Bearer token
+    if not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=400, detail="Invalid Authorization header format")
+    token = authorization[7:]
+
     # This should verify token with Google OAuth2 endpoint; here, just pseudo-demo.
     google_id = "mock_google_id_from_token_" + token[-8:]
 
@@ -410,7 +424,7 @@ def create_strategy(strategy: StrategyCreate, current_user=Depends(get_current_u
             strategy.description,
             str(strategy.config_json),
             now,
-            now
+            now,
         ),
     )
     conn.commit()
@@ -443,14 +457,18 @@ def list_strategies(current_user=Depends(get_current_user)):
     ).fetchall()
     strategies = []
     for row in rows:
-        strategies.append(StrategyRead(
-            id=row["id"],
-            name=row["name"],
-            description=row["description"],
-            config_json=eval(row["config_json"]),
-            created_at=row["created_at"],
-            updated_at=row["updated_at"]
-        ))
+        strategies.append(
+            StrategyRead(
+                id=row["id"],
+                name=row["name"],
+                description=row["description"],
+                config_json=eval(
+                    row["config_json"]
+                ),
+                created_at=row["created_at"],
+                updated_at=row["updated_at"],
+            )
+        )
     conn.close()
     return strategies
 
@@ -464,7 +482,10 @@ def get_strategy(strategy_id: int, current_user=Depends(get_current_user)):
     conn = get_db()
     row = conn.execute(
         "SELECT * FROM strategies WHERE id = ? AND user_id = ?",
-        (strategy_id, current_user["id"])
+        (
+            strategy_id,
+            current_user["id"],
+        ),
     ).fetchone()
     conn.close()
     if not row:
@@ -496,8 +517,8 @@ def update_strategy(strategy_id: int, strategy: StrategyUpdate, current_user=Dep
             str(strategy.config_json),
             now,
             strategy_id,
-            current_user["id"]
-        )
+            current_user["id"],
+        ),
     )
     conn.commit()
     row = conn.execute(
@@ -607,8 +628,16 @@ def place_paper_trade(trade: PaperTrade, current_user=Depends(get_current_user))
     conn = get_db()
     cur = conn.cursor()
     cur.execute(
-        "INSERT INTO paper_trades (user_id, strategy_id, asset, side, qty, price) VALUES (?,?,?,?,?,?)",
-        (current_user["id"], trade.strategy_id, trade.asset, trade.side, trade.qty, trade.price)
+        "INSERT INTO paper_trades "
+        "(user_id, strategy_id, asset, side, qty, price) VALUES (?,?,?,?,?,?)",
+        (
+            current_user["id"],
+            trade.strategy_id,
+            trade.asset,
+            trade.side,
+            trade.qty,
+            trade.price,
+        ),
     )
     conn.commit()
     id_ = cur.lastrowid
@@ -666,8 +695,10 @@ def get_portfolio(current_user=Depends(get_current_user)):
     ).fetchall()
     entries = [
         PortfolioEntry(
-            id=row["id"], asset=row["asset"],
-            quantity=row["quantity"], cost_basis=row["cost_basis"]
+            id=row["id"],
+            asset=row["asset"],
+            quantity=row["quantity"],
+            cost_basis=row["cost_basis"],
         )
         for row in rows
     ]
@@ -771,14 +802,18 @@ def chart_data(
         freq="D" if resolution == "1d" else "H"
     )
     np.random.seed(7)
-    df = pd.DataFrame({
-        "date": rng,
-        "open": np.random.uniform(110, 130, len(rng)),
-        "high": np.random.uniform(125, 135, len(rng)),
-        "low": np.random.uniform(100, 115, len(rng)),
-        "close": np.random.uniform(110, 140, len(rng)),
-        "volume": np.random.uniform(200, 5000, len(rng))
-    })
+    df = pd.DataFrame(
+        {
+            "date": rng,
+            "open": np.random.uniform(110, 130, len(rng)),
+            "high": np.random.uniform(125, 135, len(rng)),
+            "low": np.random.uniform(100, 115, len(rng)),
+            "close": np.random.uniform(110, 140, len(rng)),
+            "volume": np.random.uniform(
+                200, 5000, len(rng)
+            ),
+        }
+    )
     return df.to_dict(orient='records')
 
 
