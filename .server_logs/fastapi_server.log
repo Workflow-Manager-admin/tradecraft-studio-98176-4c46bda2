@@ -1,30 +1,11 @@
-INFO:     Started server process [25168]
+INFO:     Started server process [29804]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:3001 (Press CTRL+C to quit)
-INFO:     100.64.4.167:59286 - "HEAD /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:59288 - "HEAD /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:59304 - "HEAD /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:59306 - "HEAD /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:59322 - "HEAD /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:59320 - "HEAD /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:59336 - "GET /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:59346 - "GET /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:59356 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     100.64.4.167:59362 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     100.64.4.167:43016 - "GET / HTTP/1.1" 200 OK
-INFO:     100.64.4.167:50568 - "HEAD /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:50554 - "HEAD /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:50572 - "HEAD /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:50570 - "HEAD /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:50574 - "GET /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:50578 - "GET /docs HTTP/1.1" 200 OK
-INFO:     100.64.4.167:50580 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     100.64.4.167:50588 - "GET /openapi.json HTTP/1.1" 200 OK
-(trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-INFO:     100.64.4.167:49932 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60868 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60876 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60892 - "GET /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60898 - "GET /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60910 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:60918 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:47078 - "GET /health/db HTTP/1.1" 200 OK

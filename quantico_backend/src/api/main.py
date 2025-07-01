@@ -11,7 +11,6 @@ import secrets
 import datetime
 import os
 
-
 # --- Swagger Metadata ---
 app = FastAPI(
     title="Quantico Backend API",
@@ -131,6 +130,8 @@ create_tables()
 
 
 # --- Models and Schemas ---
+
+
 class UserBase(BaseModel):
     email: EmailStr
 
@@ -228,8 +229,9 @@ def hash_password(password: str) -> str:
 
 def create_access_token(user_id: int, expires_minutes=120) -> str:
     token = secrets.token_urlsafe(32)
-    expires_at = datetime.datetime.now() + datetime.timedelta(
-        minutes=expires_minutes
+    expires_at = (
+        datetime.datetime.now()
+        + datetime.timedelta(minutes=expires_minutes)
     )
     conn = get_db()
     conn.execute(
@@ -267,6 +269,7 @@ def landing_page():
 
 
 # --- HEALTH ENDPOINTS ---
+
 
 # PUBLIC_INTERFACE
 @app.get(
@@ -315,8 +318,15 @@ def health_db_check():
 
 
 # --- AUTHENTICATION ENDPOINTS ---
+
+
 # PUBLIC_INTERFACE
-@app.post("/auth/register", response_model=UserRead, tags=["auth"], summary="Register with email/password")
+@app.post(
+    "/auth/register",
+    response_model=UserRead,
+    tags=["auth"],
+    summary="Register with email/password"
+)
 def register(user: UserCreate):
     """
     Register new user with email and password.
@@ -345,23 +355,39 @@ def register(user: UserCreate):
 
 
 # PUBLIC_INTERFACE
-@app.post("/auth/token", response_model=Token, tags=["auth"], summary="Login with email/password to get token")
+@app.post(
+    "/auth/token",
+    response_model=Token,
+    tags=["auth"],
+    summary="Login with email/password to get token"
+)
 def login(form_data: OAuth2PasswordRequestForm = Depends()):
     """
     Authenticate user via email and password.
     """
     user = get_user_by_email(form_data.username)
-    if not user or not user["hashed_password"] or not verify_password(
-            form_data.password, user["hashed_password"]):
+    if (
+        not user
+        or not user["hashed_password"]
+        or not verify_password(form_data.password, user["hashed_password"])
+    ):
         raise HTTPException(status_code=400, detail="Incorrect username or password")
     token = create_access_token(user["id"])
     return {"access_token": token}
 
 
 # PUBLIC_INTERFACE
-@app.post("/auth/google", tags=["auth"], summary="Login with Google OAuth", response_model=Token)
+@app.post(
+    "/auth/google",
+    tags=["auth"],
+    summary="Login with Google OAuth",
+    response_model=Token
+)
 def google_login(
-    authorization: str = Header(..., description="Google OAuth token in Authorization header (Bearer <token>)"),
+    authorization: str = Header(
+        ...,
+        description="Google OAuth token in Authorization header (Bearer <token>)"
+    ),
     request: Request = None
 ):
     """
@@ -379,18 +405,25 @@ def google_login(
 
     # Search for existing user or create new
     conn = get_db()
-    user = conn.execute("SELECT * FROM users WHERE google_id = ?", (google_id,)).fetchone()
+    user = conn.execute(
+        "SELECT * FROM users WHERE google_id = ?",
+        (google_id,)
+    ).fetchone()
     if not user:
         email = f"user_{google_id}@google.mock"
         conn.execute("INSERT INTO users (email, google_id) VALUES (?,?)", (email, google_id))
         conn.commit()
-        user = conn.execute("SELECT * FROM users WHERE google_id = ?", (google_id,)).fetchone()
+        user = conn.execute(
+            "SELECT * FROM users WHERE google_id = ?", (google_id,)
+        ).fetchone()
     token_val = create_access_token(user["id"])
     conn.close()
     return {"access_token": token_val}
 
 
 # --- USER ENDPOINTS ---
+
+
 # PUBLIC_INTERFACE
 @app.get("/user/me", response_model=UserRead, tags=["user"])
 def get_me(current_user=Depends(get_current_user)):
@@ -439,6 +472,8 @@ def update_me(
 
 
 # --- STRATEGY CRUD ENDPOINTS ---
+
+
 # PUBLIC_INTERFACE
 @app.post("/strategies", response_model=StrategyRead, tags=["strategy"])
 def create_strategy(strategy: StrategyCreate, current_user=Depends(get_current_user)):
@@ -592,6 +627,7 @@ def delete_strategy(strategy_id: int, current_user=Depends(get_current_user)):
 
 # --- BACKTESTING/HISTORICAL DATA ENDPOINTS ---
 
+
 # PUBLIC_INTERFACE
 @app.get("/backtest/history", tags=["backtest"], summary="Get historical data")
 def get_historical_data(
@@ -655,6 +691,8 @@ def run_backtest(
 
 
 # --- PAPER TRADING ENDPOINTS ---
+
+
 # PUBLIC_INTERFACE
 @app.post("/trades", tags=["trading"], response_model=PaperTrade)
 def place_paper_trade(trade: PaperTrade, current_user=Depends(get_current_user)):
@@ -701,23 +739,26 @@ def get_paper_trades(current_user=Depends(get_current_user)):
         "SELECT * FROM paper_trades WHERE user_id = ?",
         (current_user["id"],)
     ).fetchall()
-    trades = [
-        PaperTrade(
-            id=row["id"],
-            asset=row["asset"],
-            side=row["side"],
-            qty=row["qty"],
-            price=row["price"],
-            timestamp=row["timestamp"],
-            strategy_id=row["strategy_id"]
+    trades = []
+    for row in rows:
+        trades.append(
+            PaperTrade(
+                id=row["id"],
+                asset=row["asset"],
+                side=row["side"],
+                qty=row["qty"],
+                price=row["price"],
+                timestamp=row["timestamp"],
+                strategy_id=row["strategy_id"]
+            )
         )
-        for row in rows
-    ]
     conn.close()
     return trades
 
 
 # --- PORTFOLIO TRACKER ENDPOINTS ---
+
+
 # PUBLIC_INTERFACE
 @app.get("/portfolio", tags=["portfolio"], response_model=List[PortfolioEntry])
 def get_portfolio(current_user=Depends(get_current_user)):
@@ -729,15 +770,16 @@ def get_portfolio(current_user=Depends(get_current_user)):
         "SELECT * FROM portfolios WHERE user_id = ?",
         (current_user["id"],)
     ).fetchall()
-    entries = [
-        PortfolioEntry(
-            id=row["id"],
-            asset=row["asset"],
-            quantity=row["quantity"],
-            cost_basis=row["cost_basis"],
+    entries = []
+    for row in rows:
+        entries.append(
+            PortfolioEntry(
+                id=row["id"],
+                asset=row["asset"],
+                quantity=row["quantity"],
+                cost_basis=row["cost_basis"],
+            )
         )
-        for row in rows
-    ]
     conn.close()
     return entries
 
@@ -770,6 +812,8 @@ def add_portfolio_entry(entry: PortfolioEntry, current_user=Depends(get_current_
 
 
 # --- AI ASSISTANT ENDPOINT ---
+
+
 # PUBLIC_INTERFACE
 @app.post("/ai/assist", tags=["ai"], response_model=AIResponse, summary="AI assistant for strategies")
 def ai_assistant(request: AIRequest, current_user=Depends(get_current_user)):
@@ -793,6 +837,8 @@ def ai_assistant(request: AIRequest, current_user=Depends(get_current_user)):
 
 
 # --- THEME ENDPOINT ---
+
+
 # PUBLIC_INTERFACE
 @app.get("/user/theme", tags=["theme"], response_model=ThemePreference)
 def get_theme(current_user=Depends(get_current_user)):
@@ -818,6 +864,8 @@ def set_theme(pref: ThemePreference, current_user=Depends(get_current_user)):
 
 
 # --- INTEGRATION: CHART DATA ENDPOINTS (TradingView/Recharts) ---
+
+
 # PUBLIC_INTERFACE
 @app.get("/integration/chart", tags=["integration"], summary="Candlestick/OHLC chart data")
 def chart_data(
@@ -846,7 +894,8 @@ def chart_data(
             "low": np.random.uniform(100, 115, len(rng)),
             "close": np.random.uniform(110, 140, len(rng)),
             "volume": np.random.uniform(
-                200, 5000, len(rng)
+                200, 5000,
+                len(rng)
             ),
         }
     )
@@ -854,6 +903,8 @@ def chart_data(
 
 
 # --- Error Handling ---
+
+
 @app.exception_handler(Exception)
 async def generic_exception_handler(request: Request, exc: Exception):
     return JSONResponse(
@@ -863,6 +914,8 @@ async def generic_exception_handler(request: Request, exc: Exception):
 
 
 # --- NOTES ON WEBSOCKET/REAL-TIME ---
+
+
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
@@ -877,7 +930,10 @@ def custom_openapi():
     )
     openapi_schema["info"]["x-websocket-usage"] = (
         "For real-time trading/updates: Backend supports future websocket APIs "
-        "under /ws/ endpoints. See /docs or contact devs for active real-time feeds."
+        "under /ws/ endpoints. "
+        "See /docs or contact devs "
+        "for active real-time "
+        "feeds."
     )
     return openapi_schema
 
