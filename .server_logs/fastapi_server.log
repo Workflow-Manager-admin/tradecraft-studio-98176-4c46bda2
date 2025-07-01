@@ -1173,3 +1173,57 @@ INFO:     100.64.4.167:47098 - "POST /ai/assist HTTP/1.1" 200 OK
 INFO:     100.64.4.167:60456 - "POST /ai/assist HTTP/1.1" 200 OK
 INFO:     100.64.4.167:60852 - "POST /ai/assist HTTP/1.1" 200 OK
 INFO:     100.64.4.167:51686 - "POST /ai/assist HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48426 - "OPTIONS /event/history HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48470 - "OPTIONS /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48478 - "OPTIONS /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48410 - "OPTIONS /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48438 - "OPTIONS /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48412 - "OPTIONS /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48454 - "OPTIONS /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48494 - "OPTIONS /event/history HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48502 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:48522 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48510 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48538 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48554 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:48556 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48558 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48560 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48564 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48566 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:48570 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44606 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44600 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44622 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44628 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44650 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44626 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44656 - "GET /event/history HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:44664 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44666 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:44680 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52004 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52012 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52026 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52034 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52064 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52050 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52070 - "GET /trades HTTP/1.1" 200 OK
+INFO:     100.64.4.167:52072 - "GET /portfolio HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35630 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35646 - "GET /strategies HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35654 - "OPTIONS /strategies/1 HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35662 - "OPTIONS /strategies/1 HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35664 - "GET /strategies/1 HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35676 - "GET /strategies/1 HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35692 - "OPTIONS /ai/assist HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35700 - "OPTIONS /ai/assist HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35712 - "POST /ai/assist HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35716 - "POST /ai/assist HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35732 - "POST /ai/assist HTTP/1.1" 200 OK
+INFO:     100.64.4.167:34014 - "OPTIONS /health HTTP/1.1" 200 OK
+INFO:     100.64.4.167:34012 - "OPTIONS /health HTTP/1.1" 200 OK
+INFO:     100.64.4.167:34034 - "GET /health HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:34048 - "GET /health HTTP/1.1" 404 Not Found
+INFO:     100.64.4.167:45158 - "POST /ai/assist HTTP/1.1" 200 OK
+INFO:     100.64.4.167:45170 - "POST /ai/assist HTTP/1.1" 200 OK
