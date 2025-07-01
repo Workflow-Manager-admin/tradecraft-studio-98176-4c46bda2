@@ -202,14 +202,18 @@ class ThemePreference(BaseModel):
 
 def get_user_by_email(email: str) -> Optional[sqlite3.Row]:
     conn = get_db()
-    user = conn.execute("SELECT * FROM users WHERE email = ?", (email,)).fetchone()
+    user = conn.execute(
+        "SELECT * FROM users WHERE email = ?", (email,)
+    ).fetchone()
     conn.close()
     return user
 
 
 def get_user_by_id(user_id: int) -> Optional[sqlite3.Row]:
     conn = get_db()
-    user = conn.execute("SELECT * FROM users WHERE id = ?", (user_id,)).fetchone()
+    user = conn.execute(
+        "SELECT * FROM users WHERE id = ?", (user_id,)
+    ).fetchone()
     conn.close()
     return user
 
@@ -224,15 +228,13 @@ def hash_password(password: str) -> str:
 
 def create_access_token(user_id: int, expires_minutes=120) -> str:
     token = secrets.token_urlsafe(32)
-    expires_at = datetime.datetime.now() + datetime.timedelta(minutes=expires_minutes)
+    expires_at = datetime.datetime.now() + datetime.timedelta(
+        minutes=expires_minutes
+    )
     conn = get_db()
     conn.execute(
         "INSERT INTO auth_tokens (user_id, token, expires_at) VALUES (?,?,?)",
-        (
-            user_id,
-            token,
-            expires_at,
-        ),
+        (user_id, token, expires_at),
     )
     conn.commit()
     conn.close()
@@ -242,8 +244,10 @@ def create_access_token(user_id: int, expires_minutes=120) -> str:
 def get_current_user(token: str = Depends(oauth2_scheme)) -> sqlite3.Row:
     conn = get_db()
     data = conn.execute(
-        "SELECT users.* FROM users JOIN auth_tokens ON users.id = auth_tokens.user_id "
-        "WHERE auth_tokens.token = ? AND auth_tokens.expires_at > ?",
+        "SELECT users.* FROM users "
+        "JOIN auth_tokens ON users.id = auth_tokens.user_id "
+        "WHERE auth_tokens.token = ? "
+        "AND auth_tokens.expires_at > ?",
         (token, datetime.datetime.now())
     ).fetchone()
     conn.close()
@@ -265,23 +269,49 @@ def landing_page():
 # --- HEALTH ENDPOINTS ---
 
 # PUBLIC_INTERFACE
-@app.get("/health/db", tags=["health"], summary="DB Health Check", response_model=dict)
-def health_check_db():
+@app.get(
+    "/health/db",
+    tags=["health"],
+    summary="Check database connectivity",
+    description=(
+        "Performs a simple SELECT 1 query to verify SQLite DB connection. "
+        "Returns JSON with status ok or error and detail."
+    ),
+    response_model=dict,
+    responses={
+        200: {
+            "description": "Database healthy",
+            "content": {"application/json": {}},
+        },
+        503: {
+            "description": "Database error",
+            "content": {"application/json": {}},
+        },
+    },
+)
+def health_db_check():
     """
-    DB health check endpoint.
-    Verifies ability to connect and query the SQLite DB.
+    Health check for SQLite database connection.
+
     Returns:
-      status: bool
-      detail: str
+        200: {"status": "ok"} if DB is reachable and SELECT works.
+        503: {"status": "error", "detail": <exception>} if any DB error occurs.
     """
     try:
         conn = get_db()
         cur = conn.cursor()
         cur.execute("SELECT 1")
+        cur.fetchone()
         conn.close()
-        return {"status": True, "detail": "Database connection OK"}
+        return {"status": "ok"}
     except Exception as e:
-        return JSONResponse(status_code=503, content={"status": False, "detail": str(e)})
+        return JSONResponse(
+            status_code=503,
+            content={
+                "status": "error",
+                "detail": str(e),
+            },
+        )
 
 
 # --- AUTHENTICATION ENDPOINTS ---
@@ -302,7 +332,9 @@ def register(user: UserCreate):
     )
     conn.commit()
     user_id = cur.lastrowid
-    user_row = conn.execute("SELECT * FROM users WHERE id = ?", (user_id,)).fetchone()
+    user_row = conn.execute(
+        "SELECT * FROM users WHERE id = ?", (user_id,)
+    ).fetchone()
     conn.close()
     return UserRead(
         id=user_row["id"],
@@ -319,7 +351,8 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
     Authenticate user via email and password.
     """
     user = get_user_by_email(form_data.username)
-    if not user or not user["hashed_password"] or not verify_password(form_data.password, user["hashed_password"]):
+    if not user or not user["hashed_password"] or not verify_password(
+            form_data.password, user["hashed_password"]):
         raise HTTPException(status_code=400, detail="Incorrect username or password")
     token = create_access_token(user["id"])
     return {"access_token": token}
@@ -416,7 +449,8 @@ def create_strategy(strategy: StrategyCreate, current_user=Depends(get_current_u
     now = datetime.datetime.now()
     cur = conn.cursor()
     cur.execute(
-        "INSERT INTO strategies (user_id, name, description, config_json, created_at, updated_at) "
+        "INSERT INTO strategies "
+        "(user_id, name, description, config_json, created_at, updated_at) "
         "VALUES (?,?,?,?,?,?)",
         (
             current_user["id"],
@@ -481,7 +515,8 @@ def get_strategy(strategy_id: int, current_user=Depends(get_current_user)):
     """
     conn = get_db()
     row = conn.execute(
-        "SELECT * FROM strategies WHERE id = ? AND user_id = ?",
+        "SELECT * FROM strategies WHERE id = ? "
+        "AND user_id = ?",
         (
             strategy_id,
             current_user["id"],
@@ -509,7 +544,8 @@ def update_strategy(strategy_id: int, strategy: StrategyUpdate, current_user=Dep
     conn = get_db()
     now = datetime.datetime.now()
     conn.execute(
-        "UPDATE strategies SET name = ?, description = ?, config_json = ?, updated_at = ? "
+        "UPDATE strategies "
+        "SET name = ?, description = ?, config_json = ?, updated_at = ? "
         "WHERE id = ? AND user_id = ?",
         (
             strategy.name,
@@ -613,8 +649,8 @@ def run_backtest(
         "trade_count": 27,
         "pnl_curve": [
             {"date": start_date, "balance": 10000},
-            {"date": end_date, "balance": 11340}
-        ]
+            {"date": end_date, "balance": 11340},
+        ],
     }
 
 
