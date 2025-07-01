@@ -61,3 +61,28 @@ INFO:     100.64.4.167:36968 - "GET /docs HTTP/1.1" 200 OK
 INFO:     100.64.4.167:36972 - "GET /docs HTTP/1.1" 200 OK
 INFO:     100.64.4.167:36976 - "GET /openapi.json HTTP/1.1" 200 OK
 INFO:     100.64.4.167:36978 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35674 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35680 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35684 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35692 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35702 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35712 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35724 - "GET /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35738 - "GET /docs HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35754 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35770 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     100.64.4.167:35062 - "POST /auth/google HTTP/1.1" 422 Unprocessable Entity
+INFO:     100.64.4.167:54740 - "POST /auth/google HTTP/1.1" 422 Unprocessable Entity
+INFO:     100.64.4.167:51216 - "POST /auth/google HTTP/1.1" 422 Unprocessable Entity
+INFO:     100.64.4.167:49438 - "POST /auth/token HTTP/1.1" 422 Unprocessable Entity
+INFO:     100.64.4.167:49232 - "POST /auth/token HTTP/1.1" 400 Bad Request
+INFO:     100.64.4.167:57748 - "POST /auth/register HTTP/1.1" 400 Bad Request
+(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/kavia/workspace/code-generation/tradecraft-studio-98176-4c46bda2/quantico_backend/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+INFO:     100.64.4.167:35196 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     100.64.4.167:57496 - "POST /auth/token HTTP/1.1" 400 Bad Request
+INFO:     100.64.4.167:36026 - "POST /auth/token HTTP/1.1" 200 OK
